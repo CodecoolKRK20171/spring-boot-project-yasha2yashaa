@@ -4,7 +4,7 @@ import com.codecool.springbootrestapi.models.Father;
 
 import java.util.Collection;
 
-public interface Service<Model> {
+public interface IService<Model> {
     void add(Model model);
 
     Model getById(long id);
