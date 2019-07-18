@@ -1,14 +1,22 @@
 package com.codecool.springbootrestapi.models;
 
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.List;
 
+@Table(name="fathers")
 public class Father {
+    @Id
     private long id;
+    @Column(name="firstName")
     private String firstName;
+    @Column(name="secondName")
     private String secondName;
+    @Column(name="wealth")
     private int wealth;
-    private List<Long> sonsIds;
+    //private List<Long> sonsIds;
 
     public long getId() {
         return id;
@@ -42,11 +50,11 @@ public class Father {
         this.wealth = wealth;
     }
 
-    public List<Long> getSonsIds() {
-        return sonsIds;
-    }
-
-    public void setSonsIds(List<Long> sonsIds) {
-        this.sonsIds = sonsIds;
-    }
+//    public List<Long> getSonsIds() {
+//        return sonsIds;
+//    }
+//
+//    public void setSonsIds(List<Long> sonsIds) {
+//        this.sonsIds = sonsIds;
+//    }
 }
