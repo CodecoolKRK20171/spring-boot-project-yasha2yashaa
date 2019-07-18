@@ -27,7 +27,7 @@ public class FatherController {
         return fatherService.getById(id);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.OPTIONS)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteById(@PathVariable("id") long id) {
         fatherService.deleteById(id);
     }
