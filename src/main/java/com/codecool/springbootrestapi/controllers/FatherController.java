@@ -19,7 +19,7 @@ public class FatherController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Collection<Father> getAll() {
-        return fatherService.getAllFathers();
+        return fatherService.getAll();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
