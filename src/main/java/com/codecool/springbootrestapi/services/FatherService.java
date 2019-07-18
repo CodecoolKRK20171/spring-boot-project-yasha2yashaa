@@ -5,7 +5,8 @@ import com.codecool.springbootrestapi.repositories.FatherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Service
 public class FatherService {
@@ -19,12 +20,14 @@ public class FatherService {
         fatherRepository.save(father);
     }
 
-    public Optional<Father> getById(long id) {
-        return fatherRepository.findById(id);
+    public Father getById(long id) {
+        return fatherRepository.findById(id).get();
     }
 
-    public Iterable<Father> getAllFathers() {
-        return fatherRepository.findAll();
+    public Collection<Father> getAllFathers() {
+        Collection<Father> fathers = new ArrayList<>();
+        fatherRepository.findAll().forEach(fathers::add);
+        return fathers;
     }
 
     public void update(Father father) {
