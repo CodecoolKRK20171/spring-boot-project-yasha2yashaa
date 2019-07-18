@@ -2,11 +2,12 @@ package com.codecool.springbootrestapi.models;
 
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.List;
 
 @Table(name="fathers")
+@Entity
 public class Father {
     @Id
     private long id;
