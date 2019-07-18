@@ -1,15 +1,14 @@
 package com.codecool.springbootrestapi.models;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name="fathers")
 @Entity
 public class Father {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
     @Column(name="firstName")
     private String firstName;
