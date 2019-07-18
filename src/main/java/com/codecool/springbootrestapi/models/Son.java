@@ -18,9 +18,8 @@ public class Son {
     @Column(name="diminutiveName")
     private
     String diminutiveName;
-    @Column(name="dadFavorLevel")
-    private
-    int dadFavorLevel;
+    @Column(name="fatherFavorLevel")
+    private int fatherFavorLevel;
 
     public long getId() {
         return id;
@@ -54,11 +53,11 @@ public class Son {
         this.diminutiveName = diminutiveName;
     }
 
-    public int getDadFavorLevel() {
-        return dadFavorLevel;
+    public int getFatherFavorLevel() {
+        return fatherFavorLevel;
     }
 
-    public void setDadFavorLevel(int dadFavorLevel) {
-        this.dadFavorLevel = dadFavorLevel;
+    public void setFatherFavorLevel(int fatherFavorLevel) {
+        this.fatherFavorLevel = fatherFavorLevel;
     }
 }
