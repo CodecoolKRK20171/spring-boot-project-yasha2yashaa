@@ -32,6 +32,11 @@ public class FatherController {
         fatherService.deleteById(id);
     }
 
+    @RequestMapping(method = RequestMethod.DELETE)
+    public void deleteAll() {
+        fatherService.deleteAll();
+    }
+
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void add(@RequestBody Father father) {
         fatherService.add(father);
