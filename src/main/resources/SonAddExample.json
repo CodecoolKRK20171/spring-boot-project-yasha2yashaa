@@ -1,0 +1,9 @@
+{
+    "firstName": "sonsFirstName",
+    "secondName": "sonsSecondName",
+    "diminutiveName": "sonsDiminutiveName",
+    "fatherFavorLevel": 0,
+    "father": {
+        "id": 0
+    }
+}
