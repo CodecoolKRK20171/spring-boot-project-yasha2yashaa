@@ -1,7 +1,10 @@
 package com.codecool.springbootrestapi.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Table(name="fathers")
 @Entity
@@ -10,13 +13,16 @@ public class Father {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    @Column(name="firstName")
+    @Column(name = "firstName")
     private String firstName;
-    @Column(name="secondName")
+    @Column(name = "secondName")
     private String secondName;
-    @Column(name="wealth")
+    @Column(name = "wealth")
     private int wealth;
-    //private List<Long> sonsIds;
+
+    @OneToMany(mappedBy = "father")
+    @JsonIgnoreProperties({"father"})
+    private Set<Son> sons;
 
     public long getId() {
         return id;
@@ -50,11 +56,11 @@ public class Father {
         this.wealth = wealth;
     }
 
-//    public List<Long> getSonsIds() {
-//        return sonsIds;
-//    }
-//
-//    public void setSonsIds(List<Long> sonsIds) {
-//        this.sonsIds = sonsIds;
-//    }
+    public Set<Son> getSons() {
+        return sons;
+    }
+
+    public void setSons(Set<Son> sons) {
+        this.sons = sons;
+    }
 }
