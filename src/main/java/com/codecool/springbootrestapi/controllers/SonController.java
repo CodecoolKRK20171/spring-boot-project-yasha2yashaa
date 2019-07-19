@@ -18,6 +18,7 @@ public class SonController implements IController<Son> {
     public SonController(@Autowired SonService sonService) {
         this.sonService = sonService;
     }
+
     @Override
     public Collection<Son> getAll() {
         return sonService.getAll();
