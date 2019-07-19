@@ -4,14 +4,14 @@ import com.codecool.springbootrestapi.models.Father;
 
 import java.util.Collection;
 
-public interface IService<Model> {
-    void add(Model model);
+public interface IService<E> {
+    void add(E model);
 
-    Model getById(long id);
+    E getById(long id);
 
-    Collection<Model> getAll();
+    Collection<E> getAll();
 
-    void update(Model model);
+    void update(E entity);
 
     void deleteById(long id);
 
