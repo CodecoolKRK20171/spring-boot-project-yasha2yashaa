@@ -5,7 +5,7 @@ import com.codecool.springbootrestapi.models.Father;
 import java.util.Collection;
 
 public interface IService<E> {
-    void add(E model);
+    void add(E entity);
 
     E getById(long id);
 
