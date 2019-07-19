@@ -1,5 +1,7 @@
 package com.codecool.springbootrestapi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Table(name="sons")
@@ -9,17 +11,18 @@ public class Son {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    @Column(name="firstName")
-    private
-    String firstName;
-    @Column(name="secondName")
-    private
-    String secondName;
-    @Column(name="diminutiveName")
-    private
-    String diminutiveName;
-    @Column(name="fatherFavorLevel")
+    @Column(name = "firstName")
+    private String firstName;
+    @Column(name = "secondName")
+    private String secondName;
+    @Column(name = "diminutiveName")
+    private String diminutiveName;
+    @Column(name = "fatherFavorLevel")
     private int fatherFavorLevel;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"sons"})
+    private Father father;
 
     public long getId() {
         return id;
@@ -59,5 +62,13 @@ public class Son {
 
     public void setFatherFavorLevel(int fatherFavorLevel) {
         this.fatherFavorLevel = fatherFavorLevel;
+    }
+
+    public Father getFather() {
+        return father;
+    }
+
+    public void setFather(Father father) {
+        this.father = father;
     }
 }
