@@ -11,10 +11,10 @@ import java.util.Collection;
 
 public interface IController<E> {
     @RequestMapping(method = RequestMethod.GET)
-    Collection<Father> getAll();
+    Collection<E> getAll();
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    Father getById(@PathVariable("id") long id);
+    E getById(@PathVariable("id") long id);
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     void deleteById(@PathVariable("id") long id);
