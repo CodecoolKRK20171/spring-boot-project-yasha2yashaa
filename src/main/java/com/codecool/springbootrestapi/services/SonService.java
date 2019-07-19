@@ -3,15 +3,17 @@ package com.codecool.springbootrestapi.services;
 import com.codecool.springbootrestapi.models.Son;
 import com.codecool.springbootrestapi.repositories.SonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Service
 public class SonService implements IService<Son>{
 
     private SonRepository sonRepository;
 
-    public SonService(SonRepository sonRepository) {
+    public SonService(@Autowired SonRepository sonRepository) {
         this.sonRepository = sonRepository;
     }
 
